@@ -1,0 +1,34 @@
+{
+    "name": "php-etl/magento2-expression-language",
+    "description": "This library implements functions for manipulating Magento 2 API data in ExpressionLanguage",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kiboko\\Component\\ExpressionLanguage\\Magento\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kiboko SAS",
+            "homepage": "http://kiboko.fr"
+        },
+        {
+            "name": "Grégory Planchat",
+            "email": "gregory@kiboko.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.0",
+        "symfony/expression-language": "^5.2"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    }
+}
