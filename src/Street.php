@@ -15,10 +15,10 @@ class Street extends ExpressionFunction
         );
     }
 
-    private function compile(object $address): string
+    private function compile(string $address): string
     {
         return <<<PHP
-            implode(', ', $address->getStreet())
+            implode(', ', {$address}->getStreet())
             PHP;
     }
 

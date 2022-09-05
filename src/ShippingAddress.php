@@ -15,19 +15,17 @@ class ShippingAddress extends ExpressionFunction
         );
     }
 
-    private function compile(): string
+    private function compile(string $addresses): string
     {
         return <<<PHP
-            (array_values(array_filter(\$output->getAddresses(), fn (object \$item) =>  \$item->getDefaultShipping() === true))[0] ?? null)
+            (array_values(array_filter($addresses, fn (object \$item) =>  \$item->getDefaultShipping() === true))[0] ?? null)
             PHP;
     }
 
-    private function evaluate(array $context, object $input): ?array
+    private function evaluate(array $context, array $addresses): ?array
     {
-        $output = $input;
-
         return array_values(
-            array_filter($output->getAddresses(), fn (object $item) => $item->getDefaultShipping() === true)
+            array_filter($addresses, fn (object $item) => $item->getDefaultShipping() === true)
         )[0] ?? null;
     }
 }
