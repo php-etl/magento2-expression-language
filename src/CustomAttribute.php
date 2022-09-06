@@ -18,7 +18,7 @@ class CustomAttribute extends ExpressionFunction
     private function compile(string $attributeCode): string
     {
         return <<<PHP
-            (array_values(array_filter(\$input->getCustomAttributes(), fn (\$item) => \$item->getAttributeCode() === $attributeCode))[0]["value"] ?? null)
+            (array_values(array_filter(\$input->getCustomAttributes(), fn (\$item) => \$item->getAttributeCode() === $attributeCode))[0]->getValue() ?? null)
             PHP;
     }
 
@@ -26,6 +26,6 @@ class CustomAttribute extends ExpressionFunction
     {
         return array_values(
             array_filter($input->getCustomAttributes(), fn (object $item) => $item->getAttributeCode() === $attributeCode)
-        )[0]["value"] ?? null;
+        )[0]->getValue() ?? null;
     }
 }
