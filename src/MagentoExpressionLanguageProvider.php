@@ -12,6 +12,9 @@ final class MagentoExpressionLanguageProvider implements ExpressionFunctionProvi
     {
         return [
             new CustomAttribute('customAttribute'),
+            new BillingAddress('billingAddress'),
+            new ShippingAddress('shippingAddress'),
+            new Street('street'),
         ];
     }
 }
