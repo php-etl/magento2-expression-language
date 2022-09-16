@@ -15,6 +15,7 @@ final class MagentoExpressionLanguageProvider implements ExpressionFunctionProvi
             new BillingAddress('billingAddress'),
             new ShippingAddress('shippingAddress'),
             new Street('street'),
+            new OrderSimpleItems('simpleItems'),
         ];
     }
 }
