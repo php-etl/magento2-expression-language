@@ -18,7 +18,7 @@ class OrderSimpleItems extends ExpressionFunction
     private function compile(string $items): string
     {
         return <<<PHP
-            (array_filter($items, fn (object \$item) => \$item->getDefaultBilling() === true))
+            (array_filter($items, fn (object \$item) => \$item->getProductType() === 'simple'))
             PHP;
     }
 
