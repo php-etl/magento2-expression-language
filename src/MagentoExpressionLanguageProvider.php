@@ -16,6 +16,7 @@ final class MagentoExpressionLanguageProvider implements ExpressionFunctionProvi
             new ShippingAddress('shippingAddress'),
             new Street('street'),
             new OrderSimpleItems('simpleItems'),
+            new FilterCustomAttribute('filterCustomAttribute'),
         ];
     }
 }
