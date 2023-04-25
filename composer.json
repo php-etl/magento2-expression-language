@@ -20,15 +20,15 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^8.0",
-        "symfony/expression-language": "^5.2"
+        "php": "^8.2",
+        "symfony/expression-language": "^6.0"
     },
     "config": {
         "bin-dir": "bin"
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "0.1.x-dev"
+            "dev-main": "0.2.x-dev"
         }
     }
 }
