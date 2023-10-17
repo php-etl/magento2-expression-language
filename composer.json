@@ -21,10 +21,15 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8.2",
-        "symfony/expression-language": "^6.0"
+        "symfony/expression-language": "^6.0",
+        "php-etl/magento2-api-client": "*",
+        "nyholm/psr7": "^1.8@dev"
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "extra": {
         "branch-alias": {
