@@ -7,7 +7,7 @@ use Kiboko\Component\ExpressionLanguage\Magento\Serializable\SerializableRejectD
 use ReflectionObject;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 
-class PrepareRejectBucket extends ExpressionFunction
+class Normalize extends ExpressionFunction
 {
     public function __construct($name)
     {

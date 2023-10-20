@@ -17,7 +17,7 @@ final class MagentoExpressionLanguageProvider implements ExpressionFunctionProvi
             new Street('street'),
             new OrderSimpleItems('simpleItems'),
             new FilterCustomAttribute('filterCustomAttribute'),
-            new PrepareRejectBucket('rejectSerializableObject'),
+            new Normalize('normalize'),
         ];
     }
 }
