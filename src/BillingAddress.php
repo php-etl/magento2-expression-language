@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kiboko\Component\ExpressionLanguage\Magento;
 
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
@@ -18,14 +20,14 @@ class BillingAddress extends ExpressionFunction
     private function compile(string $addresses): string
     {
         return <<<PHP
-            (array_values(array_filter($addresses, fn (object \$item) => \$item->getDefaultBilling() === true))[0] ?? null)
+            (array_values(array_filter({$addresses}, fn (object \$item) => \$item->getDefaultBilling() === true))[0] ?? null)
             PHP;
     }
 
     private function evaluate(array $context, array $addresses): ?array
     {
         return array_values(
-            array_filter($addresses, fn (object $item) => $item->getDefaultBilling() === true)
+            array_filter($addresses, fn (object $item) => true === $item->getDefaultBilling())
         )[0] ?? null;
     }
 }

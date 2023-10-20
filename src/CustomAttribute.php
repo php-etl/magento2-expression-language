@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kiboko\Component\ExpressionLanguage\Magento;
 
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
@@ -18,7 +20,7 @@ class CustomAttribute extends ExpressionFunction
     private function compile(string $attributeCode): string
     {
         return <<<PHP
-            (array_values(array_filter(\$input->getCustomAttributes(), fn (\$item) => \$item->getAttributeCode() === $attributeCode))[0]->getValue() ?? null)
+            (array_values(array_filter(\$input->getCustomAttributes(), fn (\$item) => \$item->getAttributeCode() === {$attributeCode}))[0]->getValue() ?? null)
             PHP;
     }
 

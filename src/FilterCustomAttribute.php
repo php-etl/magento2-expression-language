@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kiboko\Component\ExpressionLanguage\Magento;
 
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
@@ -18,7 +20,7 @@ class FilterCustomAttribute extends ExpressionFunction
     private function compile(string $attributeCode): string
     {
         return <<<PHP
-            (fn (\$item) => \$item->getAttributeCode() === $attributeCode)
+            (fn (\$item) => \$item->getAttributeCode() === {$attributeCode})
             PHP;
     }
 
